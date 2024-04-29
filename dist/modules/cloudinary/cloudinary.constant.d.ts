@@ -1,0 +1,2 @@
+export declare const CLOUDINARY_MODULE_OPTIONS = "CLOUDINARY_MODULE_OPTIONS";
+export declare const CLOUDINARY = "CLOUDINARY";

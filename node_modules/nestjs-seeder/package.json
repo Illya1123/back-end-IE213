@@ -1,0 +1,42 @@
+{
+  "name": "nestjs-seeder",
+  "version": "0.3.0",
+  "description": "An extension library for NestJS to perform seeding.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prebuild": "rimraf dist",
+    "dev": "npm run prebuild && tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edwardanthony/nestjs-seeder"
+  },
+  "bugs": "https://github.com/edwardanthony/nestjs-seeder/issues",
+  "homepage": "https://github.com/edwardanthony/nestjs-seeder#readme",
+  "keywords": [
+    "seeding",
+    "seeder",
+    "seed",
+    "nestjs",
+    "seeder"
+  ],
+  "author": "Edward Anthony <edwardanthony@fastmail.com>",
+  "license": "MIT",
+  "peerDependencies": {
+    "@faker-js/faker": "^7.5.0"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^7.6.18",
+    "@nestjs/core": "^7.6.18",
+    "@types/node": "^14.18.31",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^6.6.7",
+    "typescript": "^4.8.4"
+  }
+}
