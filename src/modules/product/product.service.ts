@@ -31,9 +31,9 @@ export class ProductService {
   }
   
 
-  async getProducts(): Promise<Product[]> {
-    return this.productModel.find().exec();
-  }
+  // async getProducts(): Promise<Product[]> {
+  //   return this.productModel.find().exec();
+  // }
 
   async searchProductsByName(name: string): Promise<Product[]> {
     const regex = new RegExp(name, 'i');

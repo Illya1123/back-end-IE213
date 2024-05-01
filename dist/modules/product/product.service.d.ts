@@ -11,7 +11,6 @@ export declare class ProductService {
     private readonly categoryService;
     constructor(productModel: Model<ProductDocument>, brandService: BrandService, categoryService: CategoryService);
     createProduct(createProductDto: CreateProductDto): Promise<Product>;
-    getProducts(): Promise<Product[]>;
     searchProductsByName(name: string): Promise<Product[]>;
     deleteAll(): Promise<any>;
     getProductsByFilter(filter: ProductFilter): Promise<ProductsWithMeta>;
