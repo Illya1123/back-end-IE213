@@ -47,11 +47,10 @@ export class ProductController {
     return this.productDetailService.getProductDetailBySkuId(skuId);
   }
 
-  @UseGuards(JwtAuthGuard)
-  @Get()
-  async getAllProducts(): Promise<Product[]> {
-    return this.productService.getProducts();
-  }
+  // @Get()
+  // async getAllProducts(): Promise<Product[]> {
+  //   return this.productService.getProducts();
+  // }
 
   @Get('/search')
   searchProductsByName(@Query('name') name: string): Promise<Product[]> {
