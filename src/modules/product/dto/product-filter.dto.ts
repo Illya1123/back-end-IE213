@@ -41,4 +41,6 @@ export class ProductFilter {
   @Type(() => Number)
   @ApiPropertyOptional({ type: Number, minimum: 0 })
   maxPrice?: number;
+
+  search: string;
 }

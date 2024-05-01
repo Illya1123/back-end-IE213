@@ -19,6 +19,7 @@ import { JwtAuthGuard } from '../auth/guards';
 import { Product } from './schemas/product.schema';
 import { ProductDetail } from './schemas/product-detail.schema';
 import { ProductsWithMeta } from './types/product.type';
+import { query } from 'express';
 
 @ApiBearerAuth(API_BEARER_AUTH)
 @ApiTags('products')
@@ -44,6 +45,17 @@ export class ProductController {
   @Get('/details')
   getProductDetailBySlug(@Query('skuId', ParseIntPipe) skuId: number): Promise<ProductDetail> {
     return this.productDetailService.getProductDetailBySkuId(skuId);
+  }
+
+  @UseGuards(JwtAuthGuard)
+  @Get()
+  async getAllProducts(): Promise<Product[]> {
+    return this.productService.getProducts();
+  }
+
+  @Get('/search')
+  searchProductsByName(@Query('name') name: string): Promise<Product[]> {
+    return this.productService.searchProductsByName(name);
   }
 
   @Get()

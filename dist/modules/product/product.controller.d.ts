@@ -13,5 +13,7 @@ export declare class ProductController {
     createProduct(createProductDto: CreateProductDto): Promise<Product>;
     createProductDetail(createProductDto: CreateProductDetailDto): Promise<ProductDetail>;
     getProductDetailBySlug(skuId: number): Promise<ProductDetail>;
+    getAllProducts(): Promise<Product[]>;
+    searchProductsByName(name: string): Promise<Product[]>;
     getProductsByFilter(query: ProductFilter): Promise<ProductsWithMeta>;
 }

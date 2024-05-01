@@ -31,6 +31,13 @@ let ProductService = class ProductService {
         productCreated.brand = brand;
         return productCreated.save();
     }
+    async getProducts() {
+        return this.productModel.find().exec();
+    }
+    async searchProductsByName(name) {
+        const regex = new RegExp(name, 'i');
+        return this.productModel.find({ name: regex }).exec();
+    }
     async deleteAll() {
         return this.productModel.deleteMany({});
     }

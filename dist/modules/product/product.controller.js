@@ -36,6 +36,12 @@ let ProductController = class ProductController {
     getProductDetailBySlug(skuId) {
         return this.productDetailService.getProductDetailBySkuId(skuId);
     }
+    async getAllProducts() {
+        return this.productService.getProducts();
+    }
+    searchProductsByName(name) {
+        return this.productService.searchProductsByName(name);
+    }
     getProductsByFilter(query) {
         return this.productService.getProductsByFilter(query);
     }
@@ -63,6 +69,20 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "getProductDetailBySlug", null);
+__decorate([
+    (0, common_1.UseGuards)(guards_1.JwtAuthGuard),
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], ProductController.prototype, "getAllProducts", null);
+__decorate([
+    (0, common_1.Get)('/search'),
+    __param(0, (0, common_1.Query)('name')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], ProductController.prototype, "searchProductsByName", null);
 __decorate([
     (0, common_1.Get)(),
     __param(0, (0, common_1.Query)(new common_1.ValidationPipe({ transform: true }))),
