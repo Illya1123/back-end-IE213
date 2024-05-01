@@ -5,4 +5,5 @@ export declare class ProductFilter {
     category?: string;
     minPrice?: number;
     maxPrice?: number;
+    search: string;
 }
