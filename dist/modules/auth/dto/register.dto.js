@@ -18,7 +18,7 @@ class RegisterDto {
 __decorate([
     (0, swagger_1.ApiProperty)({
         required: true,
-        example: 'phamkhang',
+        example: 'quocanh',
     }),
     (0, class_validator_1.IsNotEmpty)(),
     (0, class_validator_1.MinLength)(6),
@@ -28,7 +28,7 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiProperty)({
         required: true,
-        example: 'phamkhang',
+        example: 'quocanh',
     }),
     (0, class_validator_1.IsNotEmpty)(),
     (0, class_validator_1.MinLength)(6),

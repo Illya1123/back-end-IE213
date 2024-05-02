@@ -5,7 +5,7 @@ import { Transform } from 'class-transformer';
 export class RegisterDto {
   @ApiProperty({
     required: true,
-    example: 'phamkhang',
+    example: 'quocanh',
   })
   @IsNotEmpty()
   @MinLength(6)
@@ -14,7 +14,7 @@ export class RegisterDto {
 
   @ApiProperty({
     required: true,
-    example: 'phamkhang',
+    example: 'quocanh',
   })
   @IsNotEmpty()
   @MinLength(6)
