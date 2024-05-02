@@ -17,7 +17,7 @@ class LoginDto {
 __decorate([
     (0, swagger_1.ApiProperty)({
         required: true,
-        example: 'khangpham',
+        example: 'quocanh',
     }),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
@@ -25,7 +25,7 @@ __decorate([
 __decorate([
     (0, swagger_1.ApiProperty)({
         required: true,
-        example: 'khangpham',
+        example: 'quocanh',
     }),
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
