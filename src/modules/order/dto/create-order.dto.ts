@@ -23,17 +23,21 @@ export class CreateOrderDto {
   @ApiProperty({ required: true, type: [ProductItemDto] })
   products: ProductItemDto[];
 
+  @IsString()
+  @ApiProperty({ required: true, type: String })
+  name: string;
+
   @IsNumber()
   @ApiProperty({ required: true, type: Number })
   totalPrice: number;
 
+  @IsString()
   @ApiProperty({ required: true, type: String })
-  shippingAddress: {
-    phoneNumber: string;
-    ward: string;
-    district: string;
-    province: string;
-  };
+  address: string;
+
+  @IsString()
+  @ApiProperty({ required: true, type: String })
+  phoneNumber: string;
 
   @IsString()
   @ApiProperty({ required: true, type: String })

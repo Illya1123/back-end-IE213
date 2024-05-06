@@ -9,12 +9,10 @@ export class Product {
   quantity: number;
 }
 
-export class ShippingAddress {
-  phoneNumber: string;
-  ward: string;
-  district: string;
-  province: string;
-}
+// export class ShippingAddress {
+//   phoneNumber: string;
+//   addresss: string;
+// }
 
 @Schema({ timestamps: true })
 export class Order {
@@ -24,7 +22,7 @@ export class Order {
   @Prop({
     type: [{ productId: { type: 'ObjectId', ref: 'products', required: true }, quantity: { type: Number, required: true } }],required: true, _id: false
   })
-  products: Product[];
+  products: Product;
 
   // @Prop([
   //   {
@@ -36,17 +34,23 @@ export class Order {
   //   productId: string;
   //   quantity: number;
   // }[];
+  @Prop({ type: String, required: true })
+  name: string;
 
   @Prop({ type: Number, required: true })
   totalPrice: number;
 
-  @Prop({ type:[{
-    phoneNumber: String,
-    ward: String,
-    district: String,
-    Province: String
-}], required: true, _id: false})
-  shippingAddress: ShippingAddress;
+  @Prop({ type: String, required: true })
+  address: string;
+
+  @Prop({ type: String, required: true })
+  phoneNumber: string;
+
+//   @Prop({ type:[{
+//     phoneNumber: String,
+//     addresss: String,
+// }], required: true, _id: false})
+//   shippingAddress: ShippingAddress[];
 
   // @Prop({
   //   phoneNumber: { type: String, required: true },

@@ -14,4 +14,8 @@ export class OrderService {
     const createdOrder = new this.orderModel(createOrderDto);
     return createdOrder.save();
   }
+
+  // async findByUserId(userId: string): Promise<Order[]> {
+  //   return this.orderModel.find({ userId }).exec();
+  // }
 }
