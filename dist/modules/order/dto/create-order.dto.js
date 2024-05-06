@@ -40,14 +40,25 @@ __decorate([
     __metadata("design:type", Array)
 ], CreateOrderDto.prototype, "products", void 0);
 __decorate([
+    (0, class_validator_1.IsString)(),
+    (0, swagger_1.ApiProperty)({ required: true, type: String }),
+    __metadata("design:type", String)
+], CreateOrderDto.prototype, "name", void 0);
+__decorate([
     (0, class_validator_1.IsNumber)(),
     (0, swagger_1.ApiProperty)({ required: true, type: Number }),
     __metadata("design:type", Number)
 ], CreateOrderDto.prototype, "totalPrice", void 0);
 __decorate([
+    (0, class_validator_1.IsString)(),
     (0, swagger_1.ApiProperty)({ required: true, type: String }),
-    __metadata("design:type", Object)
-], CreateOrderDto.prototype, "shippingAddress", void 0);
+    __metadata("design:type", String)
+], CreateOrderDto.prototype, "address", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, swagger_1.ApiProperty)({ required: true, type: String }),
+    __metadata("design:type", String)
+], CreateOrderDto.prototype, "phoneNumber", void 0);
 __decorate([
     (0, class_validator_1.IsString)(),
     (0, swagger_1.ApiProperty)({ required: true, type: String }),

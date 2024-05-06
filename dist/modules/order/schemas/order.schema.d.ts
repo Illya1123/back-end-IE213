@@ -28,17 +28,13 @@ export declare class Product {
     productId: string;
     quantity: number;
 }
-export declare class ShippingAddress {
-    phoneNumber: string;
-    ward: string;
-    district: string;
-    province: string;
-}
 export declare class Order {
     userId: string;
-    products: Product[];
+    products: Product;
+    name: string;
     totalPrice: number;
-    shippingAddress: ShippingAddress;
+    address: string;
+    phoneNumber: string;
     paymentMethod: string;
     status: string;
 }

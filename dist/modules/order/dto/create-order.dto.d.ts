@@ -5,13 +5,10 @@ declare class ProductItemDto {
 export declare class CreateOrderDto {
     userId: string;
     products: ProductItemDto[];
+    name: string;
     totalPrice: number;
-    shippingAddress: {
-        phoneNumber: string;
-        ward: string;
-        district: string;
-        province: string;
-    };
+    address: string;
+    phoneNumber: string;
     paymentMethod: string;
     status: string;
 }
