@@ -39,6 +39,7 @@ const nestjs_command_1 = require("nestjs-command");
 const path = __importStar(require("path"));
 const brand_service_1 = require("../brand/brand.service");
 let BrandSeeder = class BrandSeeder {
+    brandService;
     constructor(brandService) {
         this.brandService = brandService;
     }
@@ -47,7 +48,6 @@ let BrandSeeder = class BrandSeeder {
         const jsonString = fs.readFileSync(path.join(process.cwd(), 'data/brand.json'), 'utf8');
         const jsonData = JSON.parse(jsonString);
         const brands = jsonData.map(json => {
-            var _a;
             const brand = {
                 id: json.id,
                 description: json.description,
@@ -55,7 +55,7 @@ let BrandSeeder = class BrandSeeder {
                 name: json.name,
                 sharedUrl: json.shared_url,
                 slug: json.slug,
-                parentId: (_a = json.parent_id) !== null && _a !== void 0 ? _a : null,
+                parentId: json.parent_id ?? null,
             };
             return this.brandService.createBrand(brand);
         });

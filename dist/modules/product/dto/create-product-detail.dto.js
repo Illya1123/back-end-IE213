@@ -13,6 +13,12 @@ exports.CreateProductDetailDto = void 0;
 const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 class CreateProductDetailDto {
+    SKU;
+    assets;
+    variations;
+    productId;
+    attributes;
+    article;
 }
 __decorate([
     (0, swagger_1.ApiProperty)(),

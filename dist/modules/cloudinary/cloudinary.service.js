@@ -21,6 +21,7 @@ const cloudinary_1 = require("cloudinary");
 const buffer_to_stream_1 = __importDefault(require("buffer-to-stream"));
 const cloudinary_constant_1 = require("./cloudinary.constant");
 let CloudinaryService = class CloudinaryService {
+    cloudinary;
     constructor(cloudinary) {
         this.cloudinary = cloudinary;
     }

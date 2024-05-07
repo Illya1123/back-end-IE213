@@ -18,6 +18,7 @@ const mongoose_1 = require("mongoose");
 const mongoose_2 = require("@nestjs/mongoose");
 const brand_schema_1 = require("./schemas/brand.schema");
 let BrandService = class BrandService {
+    brandModel;
     constructor(brandModel) {
         this.brandModel = brandModel;
     }
@@ -53,7 +54,7 @@ let BrandService = class BrandService {
             parentId: parentBrand.id,
         })
             .exec();
-        return Object.assign(Object.assign({}, parentBrand.toObject()), { subBrands });
+        return { ...parentBrand.toObject(), subBrands };
     }
     async getBrandsInCategory(slug) {
         const brands = await this.brandModel

@@ -20,6 +20,7 @@ const platform_express_1 = require("@nestjs/platform-express");
 const constants_1 = require("../../common/constants");
 const guards_1 = require("../auth/guards");
 let FileController = class FileController {
+    fileService;
     constructor(fileService) {
         this.fileService = fileService;
     }

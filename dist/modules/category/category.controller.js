@@ -20,6 +20,7 @@ const swagger_1 = require("@nestjs/swagger");
 const constants_1 = require("../../common/constants");
 const guards_1 = require("../auth/guards");
 let CategoryController = class CategoryController {
+    categoryService;
     constructor(categoryService) {
         this.categoryService = categoryService;
     }

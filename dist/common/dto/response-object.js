@@ -3,6 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ResponseObject = void 0;
 const common_1 = require("@nestjs/common");
 class ResponseObject {
+    success;
+    data;
+    message;
+    statusCode;
     static success(data, status = common_1.HttpStatus.OK) {
         return {
             data,

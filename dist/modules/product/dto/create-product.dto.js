@@ -16,6 +16,17 @@ const is_lower_kebab_case_validation_1 = require("../../../validations/is-lower-
 const class_transformer_1 = require("class-transformer");
 const create_color_dto_1 = require("./create-color.dto");
 class CreateProductDto {
+    skuId;
+    productId;
+    categoryId;
+    sharedUrl;
+    slug;
+    image;
+    name;
+    brandId;
+    colors;
+    price;
+    modelValues;
 }
 __decorate([
     (0, class_validator_1.IsNumber)(),

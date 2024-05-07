@@ -14,6 +14,13 @@ const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 const is_lower_kebab_case_validation_1 = require("../../../validations/is-lower-kebab-case.validation");
 class CreateBrandDto {
+    id;
+    description;
+    icon;
+    name;
+    sharedUrl;
+    slug;
+    parentId;
 }
 __decorate([
     (0, class_validator_1.IsNumber)(),

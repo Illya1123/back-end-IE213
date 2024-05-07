@@ -12,6 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LoginResponse = void 0;
 const swagger_1 = require("@nestjs/swagger");
 class LoginResponse {
+    accessToken;
+    refreshToken;
+    username;
+    email;
 }
 __decorate([
     (0, swagger_1.ApiResponseProperty)(),

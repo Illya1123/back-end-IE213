@@ -19,6 +19,8 @@ const mongoose_2 = require("mongoose");
 const category_schema_1 = require("./schemas/category.schema");
 const brand_service_1 = require("../brand/brand.service");
 let CategoryService = class CategoryService {
+    categoryModel;
+    brandService;
     constructor(categoryModel, brandService) {
         this.categoryModel = categoryModel;
         this.brandService = brandService;
@@ -38,7 +40,10 @@ let CategoryService = class CategoryService {
             throw new Error('Category not found');
         }
         const brands = await this.brandService.getBrandsInCategory(category.slug);
-        return Object.assign(Object.assign({}, category.toObject()), { brands });
+        return {
+            ...category.toObject(),
+            brands,
+        };
     }
     async deleteAll() {
         await this.categoryModel.deleteMany({});

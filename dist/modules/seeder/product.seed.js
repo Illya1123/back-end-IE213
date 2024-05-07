@@ -45,6 +45,9 @@ const product_service_1 = require("../product/product.service");
 const brand_service_1 = require("../brand/brand.service");
 const product_detail_service_1 = require("../product/product-detail.service");
 let ProductSeeder = class ProductSeeder {
+    productService;
+    productDetailService;
+    brandService;
     constructor(productService, productDetailService, brandService) {
         this.productService = productService;
         this.productDetailService = productDetailService;
@@ -99,7 +102,10 @@ let ProductSeeder = class ProductSeeder {
                 }),
                 variations: data.variations,
                 attributes: data.attributes.map((attribute) => {
-                    return Object.assign(Object.assign({}, attribute), { groupName: attribute.group_name });
+                    return {
+                        ...attribute,
+                        groupName: attribute.group_name,
+                    };
                 }),
                 article: data.article,
                 productId: data.product_id,

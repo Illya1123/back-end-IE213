@@ -14,6 +14,8 @@ const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 const class_transformer_1 = require("class-transformer");
 class RegisterDto {
+    username;
+    password;
 }
 __decorate([
     (0, swagger_1.ApiProperty)({

@@ -12,6 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CreateUserDto = void 0;
 const swagger_1 = require("@nestjs/swagger");
 class CreateUserDto {
+    username;
+    password;
 }
 __decorate([
     (0, swagger_1.ApiProperty)(),

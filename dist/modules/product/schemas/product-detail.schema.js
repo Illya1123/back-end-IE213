@@ -13,6 +13,12 @@ exports.ProductDetailSchema = exports.ProductDetail = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 const product_schema_1 = require("./product.schema");
 let ProductDetail = class ProductDetail {
+    SKU;
+    assets;
+    variations;
+    model;
+    attributes;
+    article;
 };
 __decorate([
     (0, mongoose_1.Prop)(),
