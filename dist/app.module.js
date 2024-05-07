@@ -28,6 +28,7 @@ const file_module_1 = require("./modules/file/file.module");
 const cloudinary_module_1 = require("./modules/cloudinary/cloudinary.module");
 const product_module_1 = require("./modules/product/product.module");
 const app_service_1 = require("./app.service");
+const admin_module_1 = require("./modules/admin/admin.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -48,6 +49,7 @@ AppModule = __decorate([
             file_module_1.FileModule,
             cloudinary_module_1.CloudinaryModule,
             product_module_1.ProductModule,
+            admin_module_1.AdminModule,
         ],
         providers: [
             {

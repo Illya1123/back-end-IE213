@@ -20,6 +20,7 @@ const dto_1 = require("./dto");
 const guards_1 = require("./guards");
 const decorators_1 = require("../../common/decorators");
 let AuthController = class AuthController {
+    authService;
     constructor(authService) {
         this.authService = authService;
     }

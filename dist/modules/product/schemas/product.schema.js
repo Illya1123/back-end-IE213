@@ -9,13 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProductSchema = exports.Product = exports.Color = void 0;
+exports.ProductModel = exports.ProductSchema = exports.Product = exports.Color = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
+const mongoose_2 = require("mongoose");
 const brand_schema_1 = require("../../brand/schemas/brand.schema");
 class Color {
+    name;
+    code;
 }
 exports.Color = Color;
 let Product = class Product {
+    skuId;
+    productId;
+    categoryId;
+    sharedUrl;
+    slug;
+    image;
+    name;
+    brand;
+    colors;
+    price;
+    modelValues;
 };
 __decorate([
     (0, mongoose_1.Prop)(),
@@ -66,4 +80,5 @@ Product = __decorate([
 ], Product);
 exports.Product = Product;
 exports.ProductSchema = mongoose_1.SchemaFactory.createForClass(Product);
+exports.ProductModel = (0, mongoose_2.model)('Product', exports.ProductSchema);
 //# sourceMappingURL=product.schema.js.map

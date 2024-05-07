@@ -14,6 +14,7 @@ const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
 const user_service_1 = require("./user.service");
 let UserController = class UserController {
+    userService;
     constructor(userService) {
         this.userService = userService;
     }

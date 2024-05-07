@@ -43,13 +43,18 @@ const mongoose_2 = require("@nestjs/mongoose");
 const bcrypt = __importStar(require("bcrypt"));
 const bcrypt_config_1 = require("../../config/bcrypt.config");
 let UserService = class UserService {
+    userModel;
+    bcryptConfig;
     constructor(userModel, bcryptConfig) {
         this.userModel = userModel;
         this.bcryptConfig = bcryptConfig;
     }
     async create(createUserDto) {
         const hashedPass = await bcrypt.hash(createUserDto.password, this.bcryptConfig.salt);
-        const user = await this.userModel.create(Object.assign(Object.assign({}, createUserDto), { password: hashedPass }));
+        const user = await this.userModel.create({
+            ...createUserDto,
+            password: hashedPass,
+        });
         return user;
     }
     async findAll() {

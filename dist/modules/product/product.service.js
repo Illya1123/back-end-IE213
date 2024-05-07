@@ -20,6 +20,9 @@ const product_schema_1 = require("./schemas/product.schema");
 const brand_service_1 = require("../brand/brand.service");
 const category_service_1 = require("../category/category.service");
 let ProductService = class ProductService {
+    productModel;
+    brandService;
+    categoryService;
     constructor(productModel, brandService, categoryService) {
         this.productModel = productModel;
         this.brandService = brandService;
@@ -55,7 +58,7 @@ let ProductService = class ProductService {
             query.price = { $gte: minPrice };
         }
         if (maxPrice !== undefined) {
-            query.price = Object.assign(Object.assign({}, query.price), { $lte: maxPrice });
+            query.price = { ...query.price, $lte: maxPrice };
         }
         const products = await this.productModel
             .find(query)

@@ -12,6 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BrandSchema = exports.Brand = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 let Brand = class Brand {
+    id;
+    description;
+    icon;
+    name;
+    sharedUrl;
+    slug;
+    parentId;
 };
 __decorate([
     (0, mongoose_1.Prop)({ required: false }),

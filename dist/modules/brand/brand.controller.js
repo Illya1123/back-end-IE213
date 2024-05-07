@@ -20,6 +20,7 @@ const brand_service_1 = require("./brand.service");
 const create_brand_dto_1 = require("./dto/create-brand.dto");
 const guards_1 = require("../auth/guards");
 let BrandController = class BrandController {
+    brandService;
     constructor(brandService) {
         this.brandService = brandService;
     }

@@ -18,6 +18,7 @@ const swagger_1 = require("@nestjs/swagger");
 const order_service_1 = require("./order.service");
 const create_order_dto_1 = require("./dto/create-order.dto");
 let OrderController = class OrderController {
+    orderService;
     constructor(orderService) {
         this.orderService = orderService;
     }

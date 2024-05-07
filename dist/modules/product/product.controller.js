@@ -23,6 +23,8 @@ const create_product_detail_dto_1 = require("./dto/create-product-detail.dto");
 const product_detail_service_1 = require("./product-detail.service");
 const guards_1 = require("../auth/guards");
 let ProductController = class ProductController {
+    productService;
+    productDetailService;
     constructor(productService, productDetailService) {
         this.productService = productService;
         this.productDetailService = productDetailService;

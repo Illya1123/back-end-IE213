@@ -18,6 +18,7 @@ const mongoose_1 = require("@nestjs/mongoose");
 const mongoose_2 = require("mongoose");
 const order_schema_1 = require("./schemas/order.schema");
 let OrderService = class OrderService {
+    orderModel;
     constructor(orderModel) {
         this.orderModel = orderModel;
     }

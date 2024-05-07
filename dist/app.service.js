@@ -13,6 +13,7 @@ exports.AppService = void 0;
 const common_1 = require("@nestjs/common");
 const seed_service_1 = require("./modules/seeder/seed.service");
 let AppService = class AppService {
+    seedService;
     constructor(seedService) {
         this.seedService = seedService;
     }

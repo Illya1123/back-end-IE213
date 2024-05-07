@@ -16,6 +16,10 @@ const brand_seed_1 = require("./brand.seed");
 const product_seed_1 = require("./product.seed");
 const user_service_1 = require("../user/user.service");
 let SeedService = class SeedService {
+    brandSeeder;
+    categorySeeder;
+    productSeeder;
+    userService;
     constructor(brandSeeder, categorySeeder, productSeeder, userService) {
         this.brandSeeder = brandSeeder;
         this.categorySeeder = categorySeeder;

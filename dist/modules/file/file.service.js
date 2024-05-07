@@ -13,6 +13,7 @@ exports.FileService = void 0;
 const common_1 = require("@nestjs/common");
 const cloudinary_service_1 = require("../cloudinary/cloudinary.service");
 let FileService = class FileService {
+    cloudinaryService;
     constructor(cloudinaryService) {
         this.cloudinaryService = cloudinaryService;
     }

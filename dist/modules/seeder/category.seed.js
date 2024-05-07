@@ -40,6 +40,7 @@ const category_service_1 = require("../category/category.service");
 const path = __importStar(require("path"));
 const process = __importStar(require("process"));
 let CategorySeeder = class CategorySeeder {
+    categoryService;
     constructor(categoryService) {
         this.categoryService = categoryService;
     }

@@ -14,6 +14,8 @@ const swagger_1 = require("@nestjs/swagger");
 const class_validator_1 = require("class-validator");
 const class_transformer_1 = require("class-transformer");
 class ProductItemDto {
+    productId;
+    quantity;
 }
 __decorate([
     (0, class_validator_1.IsString)(),
@@ -26,6 +28,14 @@ __decorate([
     __metadata("design:type", Number)
 ], ProductItemDto.prototype, "quantity", void 0);
 class CreateOrderDto {
+    userId;
+    products;
+    name;
+    totalPrice;
+    address;
+    phoneNumber;
+    paymentMethod;
+    status;
 }
 __decorate([
     (0, class_validator_1.IsString)(),

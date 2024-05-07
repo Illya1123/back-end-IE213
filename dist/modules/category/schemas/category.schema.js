@@ -12,6 +12,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CategorySchema = exports.Category = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 let Category = class Category {
+    id;
+    description;
+    icon;
+    name;
+    sharedUrl;
+    slug;
+    thumbnail;
 };
 __decorate([
     (0, mongoose_1.Prop)({ required: false, type: Number }),

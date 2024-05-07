@@ -15,6 +15,13 @@ const class_validator_1 = require("class-validator");
 const class_transformer_1 = require("class-transformer");
 const is_lower_kebab_case_validation_1 = require("../../../validations/is-lower-kebab-case.validation");
 class ProductFilter {
+    currentPage;
+    perPage;
+    brands;
+    category;
+    minPrice;
+    maxPrice;
+    search;
 }
 __decorate([
     (0, class_validator_1.Min)(1),

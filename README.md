@@ -58,5 +58,9 @@ $ yarn start
 $ yarn start:dev
 ```
 
+## Go to admin
+#http://localhost:3000/admin
+email: admin@gmail.com
+password: admin
 
 

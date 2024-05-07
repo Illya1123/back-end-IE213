@@ -43,3 +43,4 @@ export declare class Product {
     modelValues: string[];
 }
 export declare const ProductSchema: import("mongoose").Schema<Product, import("mongoose").Model<Product, any, any, any, any>, {}, {}, {}, {}, import("mongoose").DefaultSchemaOptions, Product>;
+export declare const ProductModel: import("mongoose").Model<Product, {}, {}, {}, any>;

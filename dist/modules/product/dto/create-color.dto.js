@@ -13,6 +13,8 @@ exports.CreateColorDto = void 0;
 const class_validator_1 = require("class-validator");
 const mongoose_1 = require("@nestjs/mongoose");
 class CreateColorDto {
+    name;
+    code;
 }
 __decorate([
     (0, mongoose_1.Prop)({ required: true, type: String }),
