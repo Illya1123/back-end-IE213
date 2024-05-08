@@ -1,11 +1,11 @@
 import express, { Request, Response, NextFunction } from 'express';
 const app = express();
-const port = 3000;
+const port = 3001;
 interface Product {
   name: string;
 }
 
-app.get('/api/products/:id', (req: Request, res: Response, next: NextFunction) => {
+app.get('/products/:id', (req: Request, res: Response, next: NextFunction) => {
   const productId = req.params.id;
 
 
