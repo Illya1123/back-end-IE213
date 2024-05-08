@@ -36,6 +36,7 @@
     "@types/cookie-parser": "^1.4.3",
     "@types/passport-jwt": "^3.0.8",
     "@types/passport-local": "^1.0.35",
+    "axios": "^1.6.8",
     "bcrypt": "^5.1.0",
     "buffer-to-stream": "^1.0.0",
     "class-transformer": "^0.5.1",

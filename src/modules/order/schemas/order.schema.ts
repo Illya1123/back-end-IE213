@@ -1,11 +1,13 @@
 import { Provider } from '@nestjs/common';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
+import { string } from 'yargs';
 
 export type OrderDocument = Order & Document;
 
 export class Product {
-  productId: string;
+  productId: number;
+  // productName: string;
   quantity: number;
 }
 
@@ -20,9 +22,9 @@ export class Order {
   userId: string;
 
   @Prop({
-    type: [{ productId: { type: 'ObjectId', ref: 'products', required: true }, quantity: { type: Number, required: true } }],required: true, _id: false
+    type: [{ productId: { type: 'ObjectId', ref: 'products', required: true },  quantity: { type: Number, required: true } }],required: true, _id: false
   })
-  products: Product;
+  products: Product[];
 
   // @Prop([
   //   {
@@ -67,6 +69,7 @@ export class Order {
 
   @Prop({ type: String, required: true })
   paymentMethod: string;
+
 
   @Prop({ type: String, default: 'pending' })
   status: string;

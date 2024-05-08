@@ -5,7 +5,11 @@ import { Type } from 'class-transformer';
 class ProductItemDto {
   @IsString()
   @ApiProperty({ required: true, type: String })
-  productId: string;
+  productId: number;
+
+  // @IsString()
+  // @ApiProperty({ required: true, type: String })
+  // productName: string;
 
   @IsNumber()
   @ApiProperty({ required: true, type: Number })
@@ -42,6 +46,10 @@ export class CreateOrderDto {
   @IsString()
   @ApiProperty({ required: true, type: String })
   paymentMethod: string;
+
+  // @IsString()
+  // @ApiProperty({ required: true, type: String })
+  // paymentResult: string;
 
   @IsString()
   @ApiProperty({ required: false, type: String, default: 'pending' })
