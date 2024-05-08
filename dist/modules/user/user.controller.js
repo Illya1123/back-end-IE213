@@ -8,6 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
@@ -21,6 +24,13 @@ let UserController = class UserController {
     async findAll() {
         return await this.userService.findAll();
     }
+    async findOneByUsername(username) {
+        const user = await this.userService.findOneByUsername(username);
+        if (!user) {
+            throw new common_1.NotFoundException('User not found');
+        }
+        return user;
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -28,6 +38,14 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "findAll", null);
+__decorate([
+    (0, common_1.Get)(':username'),
+    (0, swagger_1.ApiParam)({ name: 'username', type: String, description: 'Username of the user to find' }),
+    __param(0, (0, common_1.Param)('username')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], UserController.prototype, "findOneByUsername", null);
 UserController = __decorate([
     (0, swagger_1.ApiBearerAuth)('access-token'),
     (0, common_1.Controller)('users'),
