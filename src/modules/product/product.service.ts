@@ -1,4 +1,3 @@
-import { CurrentUser } from './../../common/decorators/current-user.decorator';
 import { Injectable } from '@nestjs/common';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
@@ -9,8 +8,7 @@ import { ProductFilter } from './dto/product-filter.dto';
 import { ProductQuery } from './interfaces/product-query.interface';
 import { CategoryService } from '../category/category.service';
 import { ProductsWithMeta } from './types/product.type';
-import { take } from 'rxjs';
-import { Like } from 'typeorm';
+
 
 @Injectable()
 export class ProductService {
