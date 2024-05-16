@@ -25,6 +25,12 @@ let OrderController = class OrderController {
     create(createOrderDto) {
         return this.orderService.create(createOrderDto);
     }
+    async getOrderByUserId(userId) {
+        return this.orderService.findByUserId(userId);
+    }
+    async getAllOrders() {
+        return this.orderService.getAllOrders();
+    }
 };
 __decorate([
     (0, common_1.Post)(),
@@ -33,6 +39,19 @@ __decorate([
     __metadata("design:paramtypes", [create_order_dto_1.CreateOrderDto]),
     __metadata("design:returntype", void 0)
 ], OrderController.prototype, "create", null);
+__decorate([
+    (0, common_1.Get)('user/:userId'),
+    __param(0, (0, common_1.Param)('userId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], OrderController.prototype, "getOrderByUserId", null);
+__decorate([
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Promise)
+], OrderController.prototype, "getAllOrders", null);
 OrderController = __decorate([
     (0, swagger_1.ApiTags)('orders'),
     (0, common_1.Controller)('orders'),

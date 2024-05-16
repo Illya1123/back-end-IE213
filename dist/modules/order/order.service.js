@@ -26,6 +26,12 @@ let OrderService = class OrderService {
         const createdOrder = new this.orderModel(createOrderDto);
         return createdOrder.save();
     }
+    async findByUserId(userId) {
+        return this.orderModel.find({ userId }).exec();
+    }
+    async getAllOrders() {
+        return this.orderModel.find().exec();
+    }
 };
 OrderService = __decorate([
     (0, common_1.Injectable)(),
