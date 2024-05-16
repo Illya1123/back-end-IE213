@@ -5,4 +5,6 @@ export declare class OrderService {
     private orderModel;
     constructor(orderModel: Model<OrderDocument>);
     create(createOrderDto: CreateOrderDto): Promise<Order>;
+    findByUserId(userId: string): Promise<Order[]>;
+    getAllOrders(): Promise<Order[]>;
 }

@@ -64,7 +64,6 @@ let UserService = class UserService {
         const user = await this.userModel.findOne({
             username,
         }, {
-            _id: true,
             password: true,
         });
         return user;
