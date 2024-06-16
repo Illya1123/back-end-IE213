@@ -9,6 +9,7 @@ import { TransformInterceptor } from './common/interceptors/transform.intercepto
 import { mongooseConfig } from './config/mongoose.config';
 import { CategoryModule } from './modules/category/category.module';
 import { OrderModule } from './modules/order/order.module';
+import { CartModule } from './modules/cart/cart.module';
 import configurations from './config';
 import { SeedModule } from './modules/seeder/seed.module';
 import { BrandModule } from './modules/brand/brand.module';
@@ -30,6 +31,7 @@ import { AdminModule } from './modules/admin/admin.module';
     AuthModule,
     CategoryModule,
     OrderModule,
+    CartModule,
     SeedModule,
     BrandModule,
     FileModule,
