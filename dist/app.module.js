@@ -21,6 +21,7 @@ const transform_interceptor_1 = require("./common/interceptors/transform.interce
 const mongoose_config_1 = require("./config/mongoose.config");
 const category_module_1 = require("./modules/category/category.module");
 const order_module_1 = require("./modules/order/order.module");
+const cart_module_1 = require("./modules/cart/cart.module");
 const config_2 = __importDefault(require("./config"));
 const seed_module_1 = require("./modules/seeder/seed.module");
 const brand_module_1 = require("./modules/brand/brand.module");
@@ -44,6 +45,7 @@ AppModule = __decorate([
             auth_module_1.AuthModule,
             category_module_1.CategoryModule,
             order_module_1.OrderModule,
+            cart_module_1.CartModule,
             seed_module_1.SeedModule,
             brand_module_1.BrandModule,
             file_module_1.FileModule,
