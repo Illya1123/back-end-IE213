@@ -26,6 +26,7 @@ import { Document } from 'mongoose';
 export type CartDocument = Cart & Document;
 export declare class Product {
     productId: string;
+    skuId: number;
     quantity: number;
 }
 export declare class Cart {

@@ -29,6 +29,9 @@ let CartService = class CartService {
     async findByUserId(userId) {
         return this.cartModel.find({ userId }).exec();
     }
+    async findByUserIdAndProductId(userId, productId) {
+        return this.cartModel.findOne({ userId, 'products.productId': productId }).exec();
+    }
     async getAllCarts() {
         return this.cartModel.find().exec();
     }

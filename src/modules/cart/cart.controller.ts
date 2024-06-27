@@ -18,6 +18,11 @@ export class CartController {
     async getCartByUserId(@Param('userId') userId: string): Promise<Cart[]> {
       return this.cartService.findByUserId(userId);
     }
+
+    @Get(':userId/:productId')
+    async getCartByUserIdAndProductId(@Param('userId') userId: string, @Param('productId') productId: string): Promise<Cart | null> {
+      return this.cartService.findByUserIdAndProductId(userId, productId);
+    }
   
     @Get()
     async getAllCarts(): Promise<Cart[]> {

@@ -13,6 +13,7 @@ exports.CartSchema = exports.Cart = exports.Product = void 0;
 const mongoose_1 = require("@nestjs/mongoose");
 class Product {
     productId;
+    skuId;
     quantity;
 }
 exports.Product = Product;
@@ -26,7 +27,7 @@ __decorate([
 ], Cart.prototype, "userId", void 0);
 __decorate([
     (0, mongoose_1.Prop)({
-        type: [{ productId: { type: 'ObjectId', ref: 'products', required: true }, quantity: { type: Number, required: true } }], required: true, _id: false
+        type: [{ productId: { type: 'ObjectId', ref: 'products', required: true }, skuId: { type: String, required: true }, img: { type: String, required: true }, name: { type: String, required: true }, quantity: { type: Number, required: true } }], required: true, _id: false
     }),
     __metadata("design:type", Product)
 ], Cart.prototype, "products", void 0);

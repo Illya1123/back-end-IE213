@@ -6,5 +6,6 @@ export declare class CartController {
     constructor(cartService: CartService);
     create(createCartDto: CreateCartDto): Promise<Cart>;
     getCartByUserId(userId: string): Promise<Cart[]>;
+    getCartByUserIdAndProductId(userId: string, productId: string): Promise<Cart | null>;
     getAllCarts(): Promise<Cart[]>;
 }

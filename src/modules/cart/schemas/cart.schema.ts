@@ -5,6 +5,7 @@ export type CartDocument = Cart & Document;
 
 export class Product {
     productId: string;
+    skuId: number;
     quantity: number;
 }
 
@@ -14,7 +15,7 @@ export class Cart {
     userId: string;
   
     @Prop({
-      type: [{ productId: { type: 'ObjectId', ref: 'products', required: true }, quantity: { type: Number, required: true } }],required: true, _id: false
+      type: [{ productId: { type: 'ObjectId', ref: 'products', required: true },skuId: { type: String, required: true }, img: { type: String, required: true }, name: { type: String, required: true }, quantity: { type: Number, required: true } }],required: true, _id: false
     })
     products: Product;
 }

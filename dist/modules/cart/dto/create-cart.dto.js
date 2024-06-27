@@ -15,6 +15,9 @@ const class_validator_1 = require("class-validator");
 const class_transformer_1 = require("class-transformer");
 class ProductItemDto {
     productId;
+    skuId;
+    img;
+    name;
     quantity;
 }
 __decorate([
@@ -22,6 +25,21 @@ __decorate([
     (0, swagger_1.ApiProperty)({ required: true, type: String }),
     __metadata("design:type", String)
 ], ProductItemDto.prototype, "productId", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, swagger_1.ApiProperty)({ required: true, type: String }),
+    __metadata("design:type", String)
+], ProductItemDto.prototype, "skuId", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, swagger_1.ApiProperty)({ required: true, type: String }),
+    __metadata("design:type", String)
+], ProductItemDto.prototype, "img", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    (0, swagger_1.ApiProperty)({ required: true, type: String }),
+    __metadata("design:type", String)
+], ProductItemDto.prototype, "name", void 0);
 __decorate([
     (0, class_validator_1.IsNumber)(),
     (0, swagger_1.ApiProperty)({ required: true, type: Number }),

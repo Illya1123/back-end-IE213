@@ -28,6 +28,9 @@ let CartController = class CartController {
     async getCartByUserId(userId) {
         return this.cartService.findByUserId(userId);
     }
+    async getCartByUserIdAndProductId(userId, productId) {
+        return this.cartService.findByUserIdAndProductId(userId, productId);
+    }
     async getAllCarts() {
         return this.cartService.getAllCarts();
     }
@@ -46,6 +49,14 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], CartController.prototype, "getCartByUserId", null);
+__decorate([
+    (0, common_1.Get)(':userId/:productId'),
+    __param(0, (0, common_1.Param)('userId')),
+    __param(1, (0, common_1.Param)('productId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], CartController.prototype, "getCartByUserIdAndProductId", null);
 __decorate([
     (0, common_1.Get)(),
     __metadata("design:type", Function),

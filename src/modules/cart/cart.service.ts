@@ -19,6 +19,10 @@ export class CartService {
     return this.cartModel.find({ userId }).exec();
   }
 
+  async findByUserIdAndProductId(userId: string, productId: string): Promise<Cart | null> {
+    return this.cartModel.findOne({ userId, 'products.productId': productId }).exec();
+  }
+
   async getAllCarts(): Promise<Cart[]> {
     return this.cartModel.find().exec();
   }
