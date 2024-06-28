@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get, Param } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param, Delete, NotFoundException } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { CartService } from './cart.service';
 import { CreateCartDto } from './dto/create-cart.dto';
@@ -27,6 +27,15 @@ export class CartController {
     @Get()
     async getAllCarts(): Promise<Cart[]> {
       return this.cartService.getAllCarts();
+    }
+
+    @Delete(':userId/:productId')
+    async deleteCartByUserIdAndProductId(@Param('userId') userId: string, @Param('productId') productId: string): Promise<{ message: string }> {
+      const result = await this.cartService.deleteByUserIdAndProductId(userId, productId);
+      if (result.deletedCount === 0) {
+        throw new NotFoundException(`Cart with userId ${userId} and productId ${productId} not found.`);
+      }
+      return { message: 'Cart item deleted successfully.' };
     }
   }
   

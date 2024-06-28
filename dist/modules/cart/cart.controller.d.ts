@@ -8,4 +8,7 @@ export declare class CartController {
     getCartByUserId(userId: string): Promise<Cart[]>;
     getCartByUserIdAndProductId(userId: string, productId: string): Promise<Cart | null>;
     getAllCarts(): Promise<Cart[]>;
+    deleteCartByUserIdAndProductId(userId: string, productId: string): Promise<{
+        message: string;
+    }>;
 }

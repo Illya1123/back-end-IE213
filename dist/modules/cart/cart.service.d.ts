@@ -8,4 +8,7 @@ export declare class CartService {
     findByUserId(userId: string): Promise<Cart[]>;
     findByUserIdAndProductId(userId: string, productId: string): Promise<Cart | null>;
     getAllCarts(): Promise<Cart[]>;
+    deleteByUserIdAndProductId(userId: string, productId: string): Promise<{
+        deletedCount: number;
+    }>;
 }

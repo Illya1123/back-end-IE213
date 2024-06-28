@@ -34,6 +34,13 @@ let CartController = class CartController {
     async getAllCarts() {
         return this.cartService.getAllCarts();
     }
+    async deleteCartByUserIdAndProductId(userId, productId) {
+        const result = await this.cartService.deleteByUserIdAndProductId(userId, productId);
+        if (result.deletedCount === 0) {
+            throw new common_1.NotFoundException(`Cart with userId ${userId} and productId ${productId} not found.`);
+        }
+        return { message: 'Cart item deleted successfully.' };
+    }
 };
 __decorate([
     (0, common_1.Post)(),
@@ -63,6 +70,14 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], CartController.prototype, "getAllCarts", null);
+__decorate([
+    (0, common_1.Delete)(':userId/:productId'),
+    __param(0, (0, common_1.Param)('userId')),
+    __param(1, (0, common_1.Param)('productId')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", Promise)
+], CartController.prototype, "deleteCartByUserIdAndProductId", null);
 CartController = __decorate([
     (0, swagger_1.ApiTags)('carts'),
     (0, common_1.Controller)('carts'),

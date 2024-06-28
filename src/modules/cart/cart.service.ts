@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Cart, CartDocument } from './schemas/cart.schema';
@@ -25,5 +25,10 @@ export class CartService {
 
   async getAllCarts(): Promise<Cart[]> {
     return this.cartModel.find().exec();
+  }
+
+  async deleteByUserIdAndProductId(userId: string, productId: string): Promise<{ deletedCount: number }> {
+    const result = await this.cartModel.deleteOne({ userId, 'products.productId': productId }).exec();
+    return { deletedCount: result.deletedCount };
   }
 }

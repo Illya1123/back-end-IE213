@@ -35,6 +35,10 @@ let CartService = class CartService {
     async getAllCarts() {
         return this.cartModel.find().exec();
     }
+    async deleteByUserIdAndProductId(userId, productId) {
+        const result = await this.cartModel.deleteOne({ userId, 'products.productId': productId }).exec();
+        return { deletedCount: result.deletedCount };
+    }
 };
 CartService = __decorate([
     (0, common_1.Injectable)(),
